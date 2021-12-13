@@ -20,10 +20,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired
     private PasswordEncoder bCryptPasswordEncoder;
 
-
-
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
+        System.out.println("in method call");
 //        Users users=usersDao.find(userName);
 //        if(users==null){
 //            users=new Users();

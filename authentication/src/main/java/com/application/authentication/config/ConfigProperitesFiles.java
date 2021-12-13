@@ -1,17 +1,19 @@
 package com.application.authentication.config;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.PropertySources;
 
-import java.util.List;
 
 @Configuration
-@PropertySource("classpath:securityconfig.properties")
+@PropertySources({
+        @PropertySource(value = "classpath:securityconfig.properties", ignoreResourceNotFound=true),
+        @PropertySource("classpath:securityconfig.properties")
+})
 @ToString
 @Getter
 @Setter
@@ -33,7 +35,7 @@ public class ConfigProperitesFiles {
     @Value("${resource.all.url}")
     private String[] resourceAllUrl;
 
-//    @Value("${resource.authentication.url}")
+    @Value("${resource.authentication.url}")
     private String[] resourceAuthenticationUrl;
 
     @Value("${authorizationserverconfig.withclient}")
@@ -59,9 +61,4 @@ public class ConfigProperitesFiles {
     @Value("${authorizationserverconfig.accessTokenValiditySeconds}")
     private String authorizationserverconfigAccessTokenValiditySeconds;
 
-//    public String getResourceAllUrlInString(){
-//        StringBuilder sb=new StringBuilder();
-//        getResourceAllUrl().stream().forEach(url -> sb.append());
-//        return sb.toString();
-//    }
 }

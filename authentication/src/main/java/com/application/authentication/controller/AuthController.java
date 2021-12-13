@@ -8,20 +8,26 @@ import org.springframework.web.bind.annotation.*;
 public class AuthController {
 
     @GetMapping("")
-    @PreAuthorize("hasRole('USER')")
     public String getTest(){
         return "ravi";
     }
 
-    @GetMapping("/adminapi")
-//    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping("/admin")
+    @PreAuthorize("hasRole('ADMIN')")
     public String getTestAdmin(){
         return "admin";
     }
 
-    @GetMapping("/normal")
+    @GetMapping("/user")
+    @PreAuthorize("hasAnyRole('ADMIN','USER')")
     public String getTestNormal(){
         return "normal";
+    }
+
+    @GetMapping("/ravi")
+    @PreAuthorize("hasAnyRole('RAVI')")
+    public String getTestRavi(){
+        return "Ravidpatel";
     }
 
 }
