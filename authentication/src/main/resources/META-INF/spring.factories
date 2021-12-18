@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.application.authentication.AuthenticationApplication,\
+  com.application.authentication.config.ConfigProperitesFiles,\
+  com.application.authentication.config.ExternalConfig
