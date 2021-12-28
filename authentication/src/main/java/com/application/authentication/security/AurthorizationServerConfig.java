@@ -2,6 +2,7 @@ package com.application.authentication.security;
 
 import com.application.authentication.config.ConfigProperitesFiles;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import org.springframework.security.authentication.AuthenticationManager;
@@ -13,6 +14,7 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 
 @Configuration
+@ComponentScan
 @EnableAuthorizationServer
 public class AurthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
     @Autowired

@@ -12,8 +12,8 @@ import org.springframework.context.annotation.PropertySources;
 
 @Configuration
 @PropertySources({
-        @PropertySource(value = "classpath:securityconfig.properties", ignoreResourceNotFound=true),
-        @PropertySource("classpath:securityconfig.properties")
+        @PropertySource(value = "classpath:application.properties", ignoreResourceNotFound=true),
+        @PropertySource("classpath:application.properties")
 })
 @ToString
 @Getter
